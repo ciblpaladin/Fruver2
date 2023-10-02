@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)e&sexlox3o7+j7$@+06swqkb0%*f1ieb&78ae$u))ktm^3l3='
+SECRET_KEY = os.environ.get('SECRET_KEY', default="your secret key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -75,12 +76,12 @@ WSGI_APPLICATION = 'Fruver_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'fruver',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',  # Puedes especificar la dirección del servidor MySQL aquí
-        'PORT': '3306',  # Deja en blanco para usar el puerto predeterminado de MySQL
+        'USER': 'ciblroot',
+        'PASSWORD': 'kVnNB0qDL9Pnhk5u9EDkeHGwIFlywfY5',
+        'HOST': 'dpg-ckdcmrkiibqc73a17e6g-a.ohio-postgres.render.com',  # Puedes especificar la dirección del servidor MySQL aquí
+        'PORT': '5432',  # Deja en blanco para usar el puerto predeterminado de MySQL
     }
 }
 

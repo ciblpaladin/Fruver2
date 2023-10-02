@@ -5,7 +5,7 @@ class conexion:
     def ejecutar_sp_y_guardar_resultados(self):
         with connection.cursor() as cursor:
             # Ejecutar el procedimiento almacenado
-            cursor.execute("call SP_get_products")
+            cursor.execute("select * from SP_getProducts()")
             # Obtener los resultados del procedimiento almacenado
             resultados = cursor.fetchall()
 
